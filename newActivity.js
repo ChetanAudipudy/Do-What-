@@ -9,8 +9,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// // Create a variable to reference the database.
-// var database = firebase.database();
+// Create a variable to reference the database.
+var database = firebase.database();
 
 // // Create a reference with an initial file path and name
 // var storage = firebase.storage();
@@ -23,7 +23,7 @@ firebase.initializeApp(config);
 // // Note that in the URL, characters are URL escaped!
 // var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/b/bucket/o/images%20stars.jpg');
 
-var image;
+// var image;
 var activityName;
 var activityType;
 var activityDuration;
@@ -58,7 +58,6 @@ $("#add-activity").on("click", function() {
   console.log(activityPrice);
   // console.log(fileToUpload);
 
-
   // push to firebase
   database.ref().push({
     activityName: activityName,
@@ -70,6 +69,6 @@ $("#add-activity").on("click", function() {
   });
 });
 
-// database.ref().on("child_added", function(childSnapshot) {
+database.ref().on("child_added", function(childSnapshot) {
 
-// });
+});
