@@ -39,16 +39,16 @@ var activityDescription;
 // function inputValidation(){
 
 //   // create array of variables
-function inputValidation () {
+// function inputValidation () {
 
-  var inputArray =[activityName, activityType, activityDuration, activityTimeOfDay, activityPrice]
+//   var inputArray =[activityName, activityType, activityDuration, activityTimeOfDay, activityPrice]
 
-  for (var i = 0; i < inputArray.length; i++) {
-    if(inputArray[i] == ""){
-      $("#error").html('Please fill out required fields.');
-    }
-  }
-}
+//   for (var i = 0; i < inputArray.length; i++) {
+//     if(inputArray[i] == ""){
+//       $("#error").html('Please fill out required fields.');
+//     }
+//   }
+// }
 
 $(document).ready(function() {
 
@@ -57,9 +57,10 @@ $(document).ready(function() {
 
     // get the input values
     activityName = $("#name").val().trim();
-    street = $("#street").val().trim();
-    city = $("#city").val().trim();
-    state = $("#state").val().trim();
+    streetNumber = $("#street_number").val().trim();
+    streetName = $("#route").val().trim();
+    city = $("#locality").val().trim();
+    state = $("#administrative_area_level_1").val().trim();
     activityType = $("#type").val().trim();
     activityDuration = $("#duration").val().trim();
     activityTimeOfDay = $("#timeOfDay").val().trim();
@@ -67,20 +68,28 @@ $(document).ready(function() {
     activityDescription = $("#description").val().trim();
     // image = $("#fileToUpload").val().trim();
 
-    // console.log(activityName);
-    // console.log(activityType);
-    // console.log(activityDuration);
-    // console.log(activityTimeOfDay);
-    // console.log(activityPrice);
+    console.log(activityName);
+    console.log(streetNumber);
+    console.log(streetName);
+    console.log(city);
+    console.log(state);
+    console.log(activityType);
+    console.log(activityDuration);
+    console.log(activityTimeOfDay);
+    console.log(activityPrice);
     // console.log(fileToUpload);
 
     // call input validation function
 
-    inputValidation();
+    // inputValidation();
 
     // push to firebase
     database.ref().push({
       activityName: activityName,
+      streetNumber: streetNumber,
+      streetName: streetName,
+      city: city,
+      state: state,
       activityType: activityType,
       activityDuration: activityDuration,
       activityTimeOfDay: activityTimeOfDay,
