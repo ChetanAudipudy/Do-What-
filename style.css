@@ -1,0 +1,87 @@
+body,html{
+	/*background-image: url("http://goldwallpapers.com/uploads/posts/plain-white-wallpaper/plain_white_wallpaper_019.jpg");*/
+	/*background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/06/HD-Minimalist-Photo.png"); */
+	background-image: url("http://media.idownloadblog.com/wp-content/uploads/2016/08/5120x2880_pure_minimal.png");
+	background-size: cover;
+	height: 100%;
+}
+
+h1{
+
+	font-weight: bold;
+}
+
+/*.activityBox{
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	height: 250px;
+	padding: 40px;
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	
+	align-items: center;
+	justify-content: space-around;
+	font-family: 'Rajdhani', sans-serif;
+}*/
+.rightBox{
+
+	/*background-color: #6d6d6d;*/
+}
+.opScBtn{
+
+	width: 450px;
+	
+}
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+/* accordion css starts here */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+/* accordionn css ends here */
