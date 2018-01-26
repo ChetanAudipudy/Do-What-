@@ -43,7 +43,7 @@ h1{
 
 /* search bar code */
 input[type=text] {
-    width: 100%;
+    width: 120px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
