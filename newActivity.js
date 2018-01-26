@@ -46,15 +46,6 @@ function inputValidation () {
   for (var i = 0; i < inputArray.length; i++) {
     if(inputArray[i] == ""){
       $("#error").html('Please fill out required fields.');
-    // } else {
-    //   database.ref().push({
-    //     activityName: activityName,
-    //     activityType: activityType,
-    //     activityDuration: activityDuration,
-    //     activityTimeOfDay: activityTimeOfDay,
-    //     activityPrice: activityPrice,
-    //     activityDescription: activityDescription,
-    //   });
     }
   }
 }
