@@ -25,7 +25,7 @@ for (i = 0; i < acc.length; i++) {
 
 ;
 
-
+ 
 
 //Function Creates a card
 function createCard(){
