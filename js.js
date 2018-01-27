@@ -55,27 +55,30 @@ function initMap() {
 //Function Creates a card
 function createCard(){
 
+  var outer = $("<div>")
   var card=$("<div>");
   card.attr("class", "card");
+  card.attr("style" , "width : 18rem;");
   var cardBody=$("<div>");
   card.attr("class", "card-body");
-  var cardTitle=$("<h5>");
+  var cardTitle=$("<h5> test the title </h5>");
   cardTitle.attr("class", "card-title");
   var p =$("<p>this is the random text</p>");
   p.attr("class","card-text");
-  var a=$("<a>");
-  a.attr("class", "btn btn-dark")
 
+
+  
+  $(outer).append(card);
   $(card).append(cardBody);
   $(card).append(cardTitle);
   $(card).append(p);
-  $(card).append(a);
   $("#card-wrapper").append(card);
 
 }
 createCard();
 createCard();
-
+createCard();
+createCard();
 
 
 
