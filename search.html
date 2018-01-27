@@ -1,18 +1,12 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Search</title>
+	<title>Do What?</title>
 	<meta charset="utf-8">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
-
-	<!-- Firebase Reference -->
-  	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
-
-<!--   	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvlvuBqoM_v-3KtJRu2REtvHxxU2995So&libraries=places&callback=initAutocomplete" async defer></script> -->
-
-
 </head>
 <body>
 		<!-- <div class="container-fluid" style="padding: 0px">
@@ -38,9 +32,7 @@
 
 				<div class="row">
 					<!-- Animated Search Bar -->
-					<form>
-						<input type="text" name="search" placeholder="Search..">
-					</form>
+					<input type="text" name="search" placeholder="Search..">
 				</div>
 
 				<div class="row">
@@ -48,25 +40,25 @@
 					<button class="accordion">Activity Type</button>
 					<div class="panel">
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> Food &amp; Drink</label>
+							<label><input type="checkbox" value="Food & Drink"> Food &amp; Drink</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> Nightlife</label>
+							<label><input type="checkbox" value="Nightlife"> Nightlife</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> Sights &amp; Landmark</label>
+							<label><input type="checkbox" value="Sights & Landmarks"> Sights &amp; Landmark</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> Tours</label>
+							<label><input type="checkbox" value="Tours"> Tours</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> Indoor Activities</label>
+							<label><input type="checkbox" value="Outdoor Activities"> Indoor Activities</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> Outdoor Activities</label>
+							<label><input type="checkbox" value="Indoor Activities"> Outdoor Activities</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> Other</label>
+							<label><input type="checkbox" value="Other"> Other</label>
 						</div>
 					</div>
 				</div>
@@ -74,19 +66,19 @@
 					<button class="accordion">Activity Hours</button>
 					<div class="panel">
 						<div class="checkbox">
-							<label><input type="checkbox" value="" id="1hour"> 0 - 1 Hours</label>
+							<label><input type="checkbox" value="0-1" id="1hour"> 0 - 1 Hours</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> 1 - 2 Hours</label>
+							<label><input type="checkbox" value="1-2"> 1 - 2 Hours</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> 2 - 3 Hours</label>
+							<label><input type="checkbox" value="2-3"> 2 - 3 Hours</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> 3 - 4 Hours</label>
+							<label><input type="checkbox" value="3-4"> 3 - 4 Hours</label>
 						</div>
 						<div class="checkbox">
-								<label><input type="checkbox" value=""> 4+ Hours</label>
+								<label><input type="checkbox" value="4+"> 4+ Hours</label>
 							</div>
 					</div>
 				</div>
@@ -94,16 +86,16 @@
 					<button class="accordion">Time of Day</button>
 					<div class="panel">
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> Morning</label>
+							<label><input type="checkbox" value="Morning"> Morning</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> Afternoon</label>
+							<label><input type="checkbox" value="Afternoon"> Afternoon</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> Evening</label>
+							<label><input type="checkbox" value="Evening"> Evening</label>
 						</div>
 						<div class="checkbox">
-								<label><input type="checkbox" value=""> Late Night</label>
+								<label><input type="checkbox" value="Late Night"> Late Night</label>
 							</div>
 					</div>
 				</div>
@@ -111,19 +103,22 @@
 					<button class="accordion">Price Point</button>
 					<div class="panel">
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> Less than $20</label>
+							<label><input type="checkbox" value="<20"> Less than $20</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> $20 - $50</label>
+							<label><input type="checkbox" value="20-50"> $20 - $50</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> $50 - $100</label>
+							<label><input type="checkbox" value="50-100"> $50 - $100</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> $100 - $150</label>
+							<label><input type="checkbox" value="100-150"> $100 - $150</label>
 						</div>
 						<div class="checkbox">
-								<label><input type="checkbox" value=""> $200+</label>
+							<label><input type="checkbox" value="150-200"> $150 - $200</label>
+						</div>
+						<div class="checkbox">
+								<label><input type="checkbox" value="200+"> $200+</label>
 							</div>
 					</div>
 				</div>
@@ -131,115 +126,15 @@
 					<button class="accordion">Family Friendly</button>
 					<div class="panel">
 						<div class="checkbox">
-							<label><input type="checkbox" value=""> All Ages</label>
+							<label><input type="checkbox" value="family"> All Ages</label>
 						</div>
 					</div>
 				</div>
 			</div>
 
 
-			<div class="col-md-10 d-flex justify-content-around align-items-center flex-wrap">
-				<div class="card" style="width: 18rem;">
+			<div class="col-md-10 d-flex justify-content-around align-items-center flex-wrap" id="card-wrapper">
 
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-dark">Go somewhere</a>
-					</div>
-				</div>
-
-				<div class="card" style="width: 18rem;">
-
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-dark">Go somewhere</a>
-					</div>
-				</div>
-
-				<div class="card" style="width: 18rem;">
-
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-dark">Go somewhere</a>
-					</div>
-				</div>
-
-				<div class="card" style="width: 18rem;">
-
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-dark">Go somewhere</a>
-					</div>
-				</div>
-
-				<div class="card" style="width: 18rem;">
-
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-dark">Go somewhere</a>
-					</div>
-				</div>
-
-				<div class="card" style="width: 18rem;">
-
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-dark">Go somewhere</a>
-					</div>
-				</div>
-				<div class="card" style="width: 18rem;">
-
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-dark">Go somewhere</a>
-					</div>
-				</div>
-				<div class="card" style="width: 18rem;">
-
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-dark">Go somewhere</a>
-					</div>
-				</div>
-				<div class="card" style="width: 18rem;">
-
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-dark">Go somewhere</a>
-					</div>
-				</div>
-				<div class="card" style="width: 18rem;">
-
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-dark">Go somewhere</a>
-					</div>
-				</div>
-				<div class="card" style="width: 18rem;">
-
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-dark">Go somewhere</a>
-					</div>
-				</div>
-				<div class="card" style="width: 18rem;">
-
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-dark">Go somewhere</a>
-					</div>
-				</div>
 			</div>
 
 		</div>
@@ -250,7 +145,5 @@
 	<script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 	<!-- <script src="jquery.geocomplete.js"></script> -->
 	<script type="text/javascript" src="js.js"></script>
-	<script type="text/javascript" src="query.js"></script>
-
 </body>
 </html>
