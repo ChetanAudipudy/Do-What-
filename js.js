@@ -22,3 +22,58 @@ for (i = 0; i < acc.length; i++) {
     } 
   });
 }
+
+;
+
+
+
+//Function Creates a card
+function createCard(){
+
+  var card=$("<div>");
+  card.attr("class", "card");
+  var cardBody=$("<div>");
+  card.attr("class", "card-body");
+  var cardTitle=$("<h5>");
+  cardTitle.attr("class", "card-title");
+  var p =$("<p>this is the random text</p>");
+  p.attr("class","card-text");
+  var a=$("<a>");
+  a.attr("class", "btn btn-dark")
+
+  $(card).append(cardBody);
+  $(card).append(cardTitle);
+  $(card).append(p);
+  $(card).append(a);
+  $("#card-wrapper").append(card);
+
+}
+createCard();
+createCard();
+
+createCard();
+createCard();
+
+
+// function cardTitle(){
+//   var cardTitle=$("<div>");
+// cardTitle.attr("class", "title");
+
+// $(".card-title1").html("this is the title");
+// }
+
+// cardTitle();
+
+// function cardInfo(){
+//   var cardInfo=$("<div>");
+// cardInfo.attr("class", "info");
+
+// $(".card-text1").html("this pulls info");
+// }
+// cardInfo();
+
+// function cardButton(){
+// var cardButton=$("<div>");
+// cardButton.attr("class", "button")
+
+// }
