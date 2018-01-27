@@ -119,6 +119,15 @@ function initAutocomplete() {
   autocomplete.addListener('place_changed', fillInAddress);
 }
 
+function initAutocomplete() {
+
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+      {types: ['(cities)']});
+
+  autocomplete.addListener('place_changed', fillInAddress);
+}
+
 function fillInAddress() {
   // Get the place details from the autocomplete object.
   var place = autocomplete.getPlace();

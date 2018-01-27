@@ -1,4 +1,4 @@
-$(document).on("click" , ".opScBtn" , function(){
+$(document).ready(function() {
 
 
 	$("#rightBox").html("<h3> Choose a location! </h3> <input id='city' name='city' autocomplete='on' data-country='us'> ");
@@ -9,9 +9,10 @@ var city;
 var state;
 var country;
 
-$("#submit").on("click", function() {
+$("#submit").on("click", function(event) {
+    event.preventDefault();
 
-    // get the input values
+    // split input string
     string = $("#autocomplete").val().trim();
     city = string.split(", ")[0];
     state = string.split(", ")[1];
@@ -19,9 +20,20 @@ $("#submit").on("click", function() {
 
     $("#dynamicDiv").text(city);
 
-    // create dynamic buttons in this div
-    $("#locationField").text("");
+    var findActivity = $('<button/>').attr({
+      class: "btn btn-dark",
+      style: "width: 350px",
+    }).text('Find Activity');
 
+    var createActivity = $('<button/>').attr({
+      class: "btn btn-dark",
+      style: "width: 350px",
+    }).text('Create Activity');
+
+    $("#locationField").text("");
+    $("#buttons").append(findActivity);
+    $("#buttons").append("<br><br>");
+    $("#buttons").append(createActivity);
 });
 
 // Google API location and form autocomplete
