@@ -6,6 +6,11 @@ body,html{
 	height: 100%;
 }
 
+a, a:hover {
+    text-decoration: none;
+    color: black;
+}
+
 h1{
 
 	font-weight: bold;
@@ -40,8 +45,10 @@ h1{
 	
 }
 
+
+/* search bar code */
 input[type=text] {
-    width: 130px;
+    width: 120px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -52,12 +59,14 @@ input[type=text] {
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
     -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+    transition: width 0.5s ease-in-out;
 }
 
 input[type=text]:focus {
     width: 100%;
 }
+
+
 
 /* accordion css starts here */
 .accordion {
@@ -83,5 +92,7 @@ input[type=text]:focus {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    width: 100%;
 }
 /* accordionn css ends here */
+
