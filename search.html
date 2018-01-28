@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Do What?</title>
+	<title>Search</title>
 	<meta charset="utf-8">
-	
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
+
+	 <!-- Firebase Reference -->
+  	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
 </head>
 <body>
 		<!-- <div class="container-fluid" style="padding: 0px">
@@ -22,127 +26,200 @@
 	<div class="container-fluid h-100">
 
 		<div class="row h-100">
-			
+
 			<div class="col-md-2"  style="background-color: #000000">
 				<div class="row bg-light">Do What?</div>
-				<div class="row">
-				</div>
-					
+
+				<div class="row"></div>
 
 				<div class="row">
 					<!-- Animated Search Bar -->
-					<input type="text" name="search" placeholder="Search..">							
+					<input type="text" name="search" placeholder="Search...">
 				</div>
-				
+
 				<div class="row">
 					<!-- accordion start -->
 					<button class="accordion">Activity Type</button>
 					<div class="panel">
 						<div class="checkbox">
-							<label><input type="checkbox" value="Food & Drink"> Food &amp; Drink</label>
+							<label><input
+								type="checkbox"
+								name="activity[]"
+								value="Food & Drink"> Food &amp; Drink</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="Nightlife"> Nightlife</label>
-						</div>	
-						<div class="checkbox">
-							<label><input type="checkbox" value="Sights & Landmarks"> Sights &amp; Landmark</label>
+							<label><input
+								type="checkbox"
+								name="activity[]"
+								value="Nightlife"> Nightlife</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="Tours"> Tours</label>
-						</div>							
-						<div class="checkbox">
-							<label><input type="checkbox" value="Outdoor Activities"> Indoor Activities</label>
+							<label><input
+								type="checkbox"
+								name="activity[]"
+								value="Sights & Landmarks"> Sights &amp; Landmark</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="Indoor Activities"> Outdoor Activities</label>
+							<label><input
+								type="checkbox"
+								name="activity[]"
+								value="Tours"> Tours</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="Other"> Other</label>
+							<label><input
+								type="checkbox"
+								name="activity[]"
+								value="Outdoor Activities"> Indoor Activities</label>
+						</div>
+						<div class="checkbox">
+							<label><input
+								type="checkbox"
+								name="activity[]"
+								value="Indoor Activities"> Outdoor Activities</label>
+						</div>
+						<div class="checkbox">
+							<label><input
+								type="checkbox"
+								name="activity[]"
+								value="Other"> Other</label>
 						</div>
 					</div>
 				</div>
+
 				<div class="row">
 					<button class="accordion">Activity Hours</button>
 					<div class="panel">
 						<div class="checkbox">
-							<label><input type="checkbox" value="0-1" id="1hour"> 0 - 1 Hours</label>
+							<label><input
+								type="checkbox"
+								name="duration[]"
+								value="0-1"> 0 - 1 Hours</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="1-2"> 1 - 2 Hours</label>
+							<label><input
+								type="checkbox"
+								name="duration[]"
+								value="1-2"> 1 - 2 Hours</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="2-3"> 2 - 3 Hours</label>
+							<label><input
+								type="checkbox"
+								name="duration[]"
+								value="2-3"> 2 - 3 Hours</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="3-4"> 3 - 4 Hours</label>
-						</div>	
+							<label><input
+								type="checkbox"
+								name="duration[]"
+								value="3-4"> 3 - 4 Hours</label>
+						</div>
 						<div class="checkbox">
-								<label><input type="checkbox" value="4+"> 4+ Hours</label>
-							</div>
+							<label><input
+								type="checkbox"
+								name="duration[]"
+								value="4+"> 4+ Hours</label>
+						</div>
 					</div>
 				</div>
+
 				<div class="row">
 					<button class="accordion">Time of Day</button>
 					<div class="panel">
 						<div class="checkbox">
-							<label><input type="checkbox" value="Morning"> Morning</label>
+							<label><input
+								type="checkbox"
+								name="timeOfDay[]"
+								value="Morning"> Morning</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="Afternoon"> Afternoon</label>
+							<label><input
+								type="checkbox"
+								name="timeOfDay[]"
+								value="Afternoon"> Afternoon</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="Evening"> Evening</label>
+							<label><input
+								type="checkbox"
+								name="timeOfDay[]"
+								value="Evening"> Evening</label>
 						</div>
 						<div class="checkbox">
-								<label><input type="checkbox" value="Late Night"> Late Night</label>
-							</div>		
+							<label><input
+								type="checkbox"
+								name="timeOfDay[]"
+								value="Late Night"> Late Night</label>
+						</div>
 					</div>
 				</div>
+
 				<div class="row">
 					<button class="accordion">Price Point</button>
 					<div class="panel">
 						<div class="checkbox">
-							<label><input type="checkbox" value="<20"> Less than $20</label>
+							<label><input
+								type="checkbox"
+								name="pricePoint[]"
+								value="<20"> Less than $20</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="20-50"> $20 - $50</label>
+							<label><input
+								type="checkbox"
+								name="pricePoint[]"
+								value="20-50"> $20 - $50</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="50-100"> $50 - $100</label>
+							<label><input
+								type="checkbox"
+								name="pricePoint[]"
+								value="50-100"> $50 - $100</label>
 						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="100-150"> $100 - $150</label>
-						</div>	
+							<label><input
+								type="checkbox"
+								name="pricePoint[]"
+								value="100-150"> $100 - $150</label>
+						</div>
 						<div class="checkbox">
-							<label><input type="checkbox" value="150-200"> $150 - $200</label>
-						</div>	
+							<label><input
+								type="checkbox"
+								name="pricePoint[]"
+								value="150-200"> $150 - $200</label>
+						</div>
 						<div class="checkbox">
-								<label><input type="checkbox" value="200+"> $200+</label>
-							</div>
-					</div>	
+							<label><input
+								type="checkbox"
+								name="pricePoint[]"
+								value="200+"> $200+</label>
+						</div>
+					</div>
 				</div>
+
 				<div class="row">
 					<button class="accordion">Family Friendly</button>
 					<div class="panel">
 						<div class="checkbox">
-							<label><input type="checkbox" value="family"> All Ages</label>
+							<label><input
+								type="checkbox"
+								name="familyFriendly[]"
+								value="family"> All Ages</label>
 						</div>
 					</div>
 				</div>
+
+				<div class="row">
+					<button class="btn btn-dark" id="submit" type="submit">Submit</button>
+				</div>
+
 			</div>
 
-
-			<div class="col-md-10 d-flex justify-content-around align-items-center flex-wrap" id="card-wrapper"> 
-			
-			</div>
+			<div class="col-md-10 d-flex justify-content-around align-items-center flex-wrap" id="card-wrapper"></div>
 
 		</div>
-		
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 	<!-- <script src="jquery.geocomplete.js"></script> -->
 	<script type="text/javascript" src="js.js"></script>
+	<script type="text/javascript" src="query.js"></script>
 </body>
 </html>

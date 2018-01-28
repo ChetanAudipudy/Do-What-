@@ -77,6 +77,11 @@ $(document).ready(function() {
     console.log(activityDuration);
     console.log(activityTimeOfDay);
     console.log(activityPrice);
+    // console.log(fileToUpload);
+
+    // call input validation function
+
+    // inputValidation();
 
     // push to firebase
     database.ref().push({
@@ -96,7 +101,13 @@ $(document).ready(function() {
 
 });
 
-// Google API location and form autocomplete
+      // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
 var placeSearch, autocomplete;
 var componentForm = {
   street_number: 'short_name',
@@ -116,15 +127,6 @@ function initAutocomplete() {
 
   // When the user selects an address from the dropdown, populate the address
   // fields in the form.
-  autocomplete.addListener('place_changed', fillInAddress);
-}
-
-function initAutocomplete() {
-
-  autocomplete = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-      {types: ['(cities)']});
-
   autocomplete.addListener('place_changed', fillInAddress);
 }
 
@@ -163,5 +165,37 @@ function geolocate() {
       });
       autocomplete.setBounds(circle.getBounds());
     });
-  }
-}
+  };
+};
+
+// var classArray = ["activity", "duration", "timeOfDay", "pricePoint", "familyFriendly"]
+
+
+//     $("#submit").on("click", function() {
+
+
+        // if($('input:checkbox').hasClass('activity')) {
+        //     var checkedValues = $('input:checkbox:checked').map(function() {
+        //         activityType.push(this.value);
+        //     }).get();
+
+//         } else {
+
+//         if($('input:checkbox').hasClass('duration')) {
+//             var checkedValues = $('input:checkbox:checked').map(function() {
+//                 activityDuration.push(this.value);
+//                 console.log(activityDuration);
+//             }).get();
+
+//         // } else {
+
+//         // if($('input:checkbox').hasClass('duration')) {
+//         //     var checkedValues = $('input:checkbox:checked').map(function() {
+//         //         activityDuration.push(this.value);
+//         //         console.log(activityDuration);
+//         //     }).get();
+//         };
+
+//     };
+// });
+// });
