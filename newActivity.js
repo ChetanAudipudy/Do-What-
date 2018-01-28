@@ -13,20 +13,11 @@ firebase.initializeApp(config);
 // Create a variable to reference the database.
 var database = firebase.database();
 
-// // Create a reference with an initial file path and name
-// var storage = firebase.storage();
-// var pathReference = storage.ref('images/stars.jpg');
-
-// // Create a reference from a Google Cloud Storage URI
-// var gsReference = storage.refFromURL('gs://bucket/images/stars.jpg')
-
-// // Create a reference from an HTTPS URL
-// // Note that in the URL, characters are URL escaped!
-// var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/b/bucket/o/images%20stars.jpg');
-
-// var image;
+// Create variables for input values
 var activityName;
-var street;
+var streetNumber;
+var streetName;
+var address;
 var city;
 var state;
 var activityType;
@@ -35,24 +26,10 @@ var activityTimeOfDay;
 var activityPrice;
 var activityDescription;
 
-// create function for input validation
-// function inputValidation(){
-
-//   // create array of variables
-// function inputValidation () {
-
-//   var inputArray =[activityName, activityType, activityDuration, activityTimeOfDay, activityPrice]
-
-//   for (var i = 0; i < inputArray.length; i++) {
-//     if(inputArray[i] == ""){
-//       $("#error").html('Please fill out required fields.');
-//     }
-//   }
-// }
 
 $(document).ready(function() {
 
-// whenever a user clicks the button
+  // When add-activity button is clicked, grab input values and push to Firebase
   $("#add-activity").on("click", function() {
 
     // get the input values
@@ -66,28 +43,16 @@ $(document).ready(function() {
     activityTimeOfDay = $("#timeOfDay").val().trim();
     activityPrice = $("#price").val().trim();
     activityDescription = $("#description").val().trim();
-    // image = $("#fileToUpload").val().trim();
 
-    console.log(activityName);
-    console.log(streetNumber);
-    console.log(streetName);
-    console.log(city);
-    console.log(state);
-    console.log(activityType);
-    console.log(activityDuration);
-    console.log(activityTimeOfDay);
-    console.log(activityPrice);
-    // console.log(fileToUpload);
+    // Consolidate address
+    address = (streetNumber + " " + streetName);
 
-    // call input validation function
+    console.log(address);
 
-    // inputValidation();
-
-    // push to firebase
+    // Push input values to firebase
     database.ref().push({
       activityName: activityName,
-      streetNumber: streetNumber,
-      streetName: streetName,
+      address: address,
       city: city,
       state: state,
       activityType: activityType,
@@ -96,18 +61,10 @@ $(document).ready(function() {
       activityPrice: activityPrice,
       activityDescription: activityDescription,
     });
-
   });
-
 });
 
-      // This example displays an address form, using the autocomplete feature
-      // of the Google Places API to help users fill in the information.
-
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
+// Link to Google address auto-complete API
 var placeSearch, autocomplete;
 var componentForm = {
   street_number: 'short_name',
@@ -119,19 +76,18 @@ var componentForm = {
 };
 
 function initAutocomplete() {
-  // Create the autocomplete object, restricting the search to geographical
-  // location types.
+  // Create the autocomplete object, restricting the search to geographical location types
   autocomplete = new google.maps.places.Autocomplete(
       /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
       {types: ['geocode']});
 
-  // When the user selects an address from the dropdown, populate the address
-  // fields in the form.
+  // When the user selects an address from the dropdown,
+  // populate the address fields in the form
   autocomplete.addListener('place_changed', fillInAddress);
 }
 
 function fillInAddress() {
-  // Get the place details from the autocomplete object.
+  // Get the place details from the autocomplete object
   var place = autocomplete.getPlace();
 
   for (var component in componentForm) {
@@ -140,7 +96,7 @@ function fillInAddress() {
   }
 
   // Get each component of the address from the place details
-  // and fill the corresponding field on the form.
+  // and fill the corresponding field on the form
   for (var i = 0; i < place.address_components.length; i++) {
     var addressType = place.address_components[i].types[0];
     if (componentForm[addressType]) {
@@ -151,7 +107,7 @@ function fillInAddress() {
 }
 
 // Bias the autocomplete object to the user's geographical location,
-// as supplied by the browser's 'navigator.geolocation' object.
+// as supplied by the browser's 'navigator.geolocation' object
 function geolocate() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -167,35 +123,3 @@ function geolocate() {
     });
   };
 };
-
-// var classArray = ["activity", "duration", "timeOfDay", "pricePoint", "familyFriendly"]
-
-
-//     $("#submit").on("click", function() {
-
-
-        // if($('input:checkbox').hasClass('activity')) {
-        //     var checkedValues = $('input:checkbox:checked').map(function() {
-        //         activityType.push(this.value);
-        //     }).get();
-
-//         } else {
-
-//         if($('input:checkbox').hasClass('duration')) {
-//             var checkedValues = $('input:checkbox:checked').map(function() {
-//                 activityDuration.push(this.value);
-//                 console.log(activityDuration);
-//             }).get();
-
-//         // } else {
-
-//         // if($('input:checkbox').hasClass('duration')) {
-//         //     var checkedValues = $('input:checkbox:checked').map(function() {
-//         //         activityDuration.push(this.value);
-//         //         console.log(activityDuration);
-//         //     }).get();
-//         };
-
-//     };
-// });
-// });
