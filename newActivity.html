@@ -36,134 +36,125 @@
         <div class="panel-heading">
           <h3 class="panel-title">Create Activity</h3>
         </div>
+
         <div class="panel-body">
 
-      <form>
-        <div class="form-group">
-          <label for="name">Activity Name</label>
-          <input class="form-control" id="name" type="text">
-          <span class="error"></span>
-        </div>
+        <form>
+          <div class="form-group">
+            <label for="name">Activity Name</label>
+            <input class="form-control" id="name" type="text">
+            <span class="error"></span>
+          </div>
 
-        <div id="locationField">
-          <label for="type">Search address or location: </label>
-          <input id="autocomplete" placeholder="Search Here"
-                 onFocus="geolocate()" type="text"></input>
-        </div>
+          <div id="locationField">
+            <label for="type">Search address or location: </label>
+            <input id="autocomplete" placeholder="Search Here"
+                   onFocus="geolocate()" type="text"></input>
+          </div>
 
-        <table class="table" id="address">
-          <tr>
-            <td class="slimField">
-              <label for="type">Address Number</label>
-              <br>
-              <input class="field" id="street_number" disabled="true"></input>
-            </td>
+          <table class="table" id="address">
+            <tr>
+              <td class="slimField">
+                <label for="type">Address Number</label>
+                <br>
+                <input class="field" id="street_number" disabled="true"></input>
+              </td>
 
-            <td class="wideField" colspan="2">
-              <label for="type">Street Name</label>
-              <br>
-              <input class="field" id="route" disabled="true"></input>
-            </td>
-          </tr>
+              <td class="wideField" colspan="2">
+                <label for="type">Street Name</label>
+                <br>
+                <input class="field" id="route" disabled="true"></input>
+              </td>
+            </tr>
 
-          <tr>
-            <td class="wideField" colspan="2">
-              <label for="type">City</label>
-              <br>
-              <input class="field" id="locality" disabled="true"></input>
-            </td>
+            <tr>
+              <td class="wideField" colspan="2">
+                <label for="type">City</label>
+                <br>
+                <input class="field" id="locality" disabled="true"></input>
+              </td>
 
-            <td class="wideField" colspan="2">
-              <label for="type">State</label>
-              <br>
-              <input class="field" id="administrative_area_level_1" disabled="true"></input>
-            </td>
-          </tr>
+              <td class="wideField" colspan="2">
+                <label for="type">State</label>
+                <br>
+                <input class="field" id="administrative_area_level_1" disabled="true"></input>
+              </td>
+            </tr>
 
-          <tr>
-            <td class="wideField" colspan="2">
-              <label for="type">Zip Code</label>
-              <br>
-              <input class="field" id="postal_code" disabled="true"></input>
-            </td>
-            <td class="wideField" colspan="2">
-              <label for="type">Country</label>
-              <br>
-              <input class="field" id="country" disabled="true"></input>
-            </td>
-          </tr>
-        </table>
+            <tr>
+              <td class="wideField" colspan="2">
+                <label for="type">Zip Code</label>
+                <br>
+                <input class="field" id="postal_code" disabled="true"></input>
+              </td>
 
-        <label for="type">Activity Type</label>
-        <select class="custom-select custom-select-lg mb-3" id="type">
-          <option value="">Select</option>
-          <option value="Food & Drink">Food & Drink</option>
-          <option value="Nightlife">Nightlife</option>
-          <option value="Sights & Landmarks">Sights & Landmarks</option>
-          <option value="Tours">Tours</option>
-          <option value="Outdoor-activities">Outdoor Activities</option>
-          <option value="Indoor Activities">Indoor Activities</option>
-          <option value="Other">Other</option>
-          <span class="error"></span>
-        </select>
+              <td class="wideField" colspan="2">
+                <label for="type">Country</label>
+                <br>
+                <input class="field" id="country" disabled="true"></input>
+              </td>
+            </tr>
+          </table>
 
-        <label for="type">Activity Duration</label>
-        <select class="custom-select custom-select-lg mb-3" id="duration">
-          <option value="">Select</option>
-          <option value="0-1">0 - 1 hours</option>
-          <option value="1-2">1 - 2 hours</option>
-          <option value="2-3">2 - 3 hours</option>
-          <option value="3-4">3 - 4 hours</option>
-          <option value="4+">4+ hours</option>
-          <span class="error"></span>
-        </select>
+          <label for="type">Activity Type</label>
+          <select class="custom-select custom-select-lg mb-3" id="type">
+            <option value="">Select</option>
+            <option value="Food & Drink">Food & Drink</option>
+            <option value="Nightlife">Nightlife</option>
+            <option value="Sights & Landmarks">Sights & Landmarks</option>
+            <option value="Tours">Tours</option>
+            <option value="Outdoor Activities">Outdoor Activities</option>
+            <option value="Indoor Activities">Indoor Activities</option>
+            <option value="Other">Other</option>
+            <span class="error"></span>
+          </select>
 
-        <label for="type">Best Time of Day</label>
-        <select class="custom-select custom-select-lg mb-3" id="timeOfDay">
-          <option value="">Select</option>
-          <option value="Morning">Morning</option>
-          <option value="Afternoon">Afternoon</option>
-          <option value="Evening">Evening</option>
-          <option value="Late Night">Late Night</option>
-          <span class="error"></span>
-        </select>
+          <label for="type">Activity Duration</label>
+          <select class="custom-select custom-select-lg mb-3" id="duration">
+            <option value="">Select</option>
+            <option value="0-1">0 - 1 hours</option>
+            <option value="1-2">1 - 2 hours</option>
+            <option value="2-3">2 - 3 hours</option>
+            <option value="3-4">3 - 4 hours</option>
+            <option value="4+">4+ hours</option>
+            <span class="error"></span>
+          </select>
 
-        <label for="type">Price Point</label>
-        <select class="custom-select custom-select-lg mb-3" id="price">
-          <option value="">Select</option>
-          <option value="<20">Less than $20</option>
-          <option value="20-50">$20 - $50</option>
-          <option value="50-100">$50 - $100</option>
-          <option value="100-150">$100 - $150</option>
-          <option value="150-200">$150 - $200</option>
-          <option value="200+">$200+</option>
-          <span class="error"></span>
-        </select>
+          <label for="type">Best Time of Day</label>
+          <select class="custom-select custom-select-lg mb-3" id="timeOfDay">
+            <option value="">Select</option>
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+            <option value="Late Night">Late Night</option>
+            <span class="error"></span>
+          </select>
 
-        <div class="form-group">
-          <label for="Description">Description</label>
-          <textarea class="form-control" id="description" rows="3"></textarea>
-          <span class="error"></span>
-        </div>
+          <label for="type">Price Point</label>
+          <select class="custom-select custom-select-lg mb-3" id="price">
+            <option value="">Select</option>
+            <option value="<20">Less than $20</option>
+            <option value="20-50">$20 - $50</option>
+            <option value="50-100">$50 - $100</option>
+            <option value="100-150">$100 - $150</option>
+            <option value="150-200">$150 - $200</option>
+            <option value="200+">$200+</option>
+            <span class="error"></span>
+          </select>
 
-<!--         <label for="image">Upload an Image (optional)</label>
-        <div class="custom-file">
-          <input type="file" class="custom-file-input" id="customFile">
-          <label class="custom-file-label" for="customFile">Choose File</label>
-        </div> -->
+          <div class="form-group">
+            <label for="Description">Description</label>
+            <textarea class="form-control" id="description" rows="3"></textarea>
+            <span class="error"></span>
+          </div>
 
-        <br><br>
-        <div id="error"></div>
-        <br>
-        <button class="btn btn-dark" id="add-activity" type="submit">Submit</button>
+          <button class="btn btn-dark" id="add-activity" type="submit">Submit</button>
 
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </div>
-</div>
-
-  </div>
 
 </body>
 
