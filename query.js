@@ -10,23 +10,46 @@ var config = {
 
 firebase.initializeApp(config);
 
-const database = firebase.database();
+const database = firebase.database().ref();
 
-var queryArray = {
-  activityType: []
+var activityArray = [];
+var durationArray = [];
+var timeOfDayArray = [];
+var priceArray = [];
 
+$(document).ready(function() {
 
-}
+    $("#submit").on("click", function() {
 
+        $("input[name='activity[]']:checked").each(function () {
+            activityArray.push(this.value);
+            console.log(activityArray);
+        });
 
-const activityType = database.child('activityType');
-const query = events.orderByKey().equalTo('Outdoor Activities');
-events.orderByKey().equalTo('Outdoor Activities');
-events.orderByKey().equalTo('Outdoor Activities');
-events.orderByKey().equalTo('Outdoor Activities');
+        $("input[name='duration[]']:checked").each(function () {
+            durationArray.push(this.value);
+            console.log(durationArray);
+        });
 
-console.log(query);
+        $("input[name='timeOfDay[]']:checked").each(function () {
+            timeOfDayArray.push(this.value);
+            console.log(timeOfDayArray);
+        });
 
-query.on('value', snap => {
-  // render data to HTML
+        $("input[name='pricePoint[]']:checked").each(function () {
+            priceArray.push(this.value);
+            console.log(priceArray);
+        });
+
+    });
 });
+
+
+// const activityType = database.child('activityType');
+// const query = events.orderByKey().equalTo('Outdoor Activities');
+
+// console.log(query);
+
+// query.on('value', snap => {
+//   // render data to HTML
+// });

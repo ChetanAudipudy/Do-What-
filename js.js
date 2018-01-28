@@ -21,36 +21,37 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-// code for
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -33.8688, lng: 151.2195},
-    zoom: 13
-  });
-  var card = document.getElementById('pac-card');
-  var input = document.getElementById('pac-input');
-  var types = document.getElementById('type-selector');
-  var strictBounds = document.getElementById('strict-bounds-selector');
 
-  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+// // code for
+// function initMap() {
+//   var map = new google.maps.Map(document.getElementById('map'), {
+//     center: {lat: -33.8688, lng: 151.2195},
+//     zoom: 13
+//   });
+//   var card = document.getElementById('pac-card');
+//   var input = document.getElementById('pac-input');
+//   var types = document.getElementById('type-selector');
+//   var strictBounds = document.getElementById('strict-bounds-selector');
 
-  var autocomplete = new google.maps.places.Autocomplete(input);
+//   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
 
-  // Bind the map's bounds (viewport) property to the autocomplete object,
-  // so that the autocomplete requests use the current map bounds for the
-  // bounds option in the request.
-  autocomplete.bindTo('bounds', map);
+//   var autocomplete = new google.maps.places.Autocomplete(input);
 
-  var infowindow = new google.maps.InfoWindow();
-  var infowindowContent = document.getElementById('infowindow-content');
-  infowindow.setContent(infowindowContent);
-  var marker = new google.maps.Marker({
-    map: map,
-    anchorPoint: new google.maps.Point(0, -29)
-  });
-};
+//   // Bind the map's bounds (viewport) property to the autocomplete object,
+//   // so that the autocomplete requests use the current map bounds for the
+//   // bounds option in the request.
+//   autocomplete.bindTo('bounds', map);
 
- 
+//   var infowindow = new google.maps.InfoWindow();
+//   var infowindowContent = document.getElementById('infowindow-content');
+//   infowindow.setContent(infowindowContent);
+//   var marker = new google.maps.Marker({
+//     map: map,
+//     anchorPoint: new google.maps.Point(0, -29)
+//   });
+// };
+
+
 
 //Function Creates a card
 function createCard(){
@@ -67,7 +68,7 @@ function createCard(){
   p.attr("class","card-text");
 
 
-  
+
   $(outer).append(card);
   $(card).append(cardBody);
   $(card).append(cardTitle);

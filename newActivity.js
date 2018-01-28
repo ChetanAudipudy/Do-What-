@@ -167,3 +167,35 @@ function geolocate() {
     });
   };
 };
+
+// var classArray = ["activity", "duration", "timeOfDay", "pricePoint", "familyFriendly"]
+
+
+//     $("#submit").on("click", function() {
+
+
+        // if($('input:checkbox').hasClass('activity')) {
+        //     var checkedValues = $('input:checkbox:checked').map(function() {
+        //         activityType.push(this.value);
+        //     }).get();
+
+//         } else {
+
+//         if($('input:checkbox').hasClass('duration')) {
+//             var checkedValues = $('input:checkbox:checked').map(function() {
+//                 activityDuration.push(this.value);
+//                 console.log(activityDuration);
+//             }).get();
+
+//         // } else {
+
+//         // if($('input:checkbox').hasClass('duration')) {
+//         //     var checkedValues = $('input:checkbox:checked').map(function() {
+//         //         activityDuration.push(this.value);
+//         //         console.log(activityDuration);
+//         //     }).get();
+//         };
+
+//     };
+// });
+// });
