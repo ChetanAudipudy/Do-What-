@@ -10,7 +10,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-const database = firebase.database().ref();
+var database = firebase.database();
 
 var activityTypeArray = [];
 var durationArray = [];
@@ -36,7 +36,14 @@ $(document).ready(function() {
         $("input[name='pricePoint[]']:checked").each(function () {
             priceArray.push(this.value);
         });
+ // Push input values to firebase
+        database.ref().push({
+            activityType: activityTypeArray,
+            activityDuration: durationArray,
+            activityTimeOfDay: timeOfDayArray,
+            activityPrice: priceArray
 
+        });
         // Create a variable to link to firebase
         var activityRef = firebase.database().ref();
 
@@ -44,28 +51,30 @@ $(document).ready(function() {
         activityRef.on('value', function(snapshot) {
             snapshot.forEach(function(childSnapshot) {
               var activityData = childSnapshot.val();
-
+console.log(activityData);
                 // Compare data object child values to input values in array with for loop
                 for (i = 0; i < activityTypeArray.length; i++) {
-                if (activityTypeArray[i] == activityData.activityType) {
+                    if (activityTypeArray[i] == activityData.activityType) {
 
-                    for (j = 0; j < durationArray.length; j++) {
-                    if (durationArray[j] == activityData.activityDuration) {
+                        for (j = 0; j < durationArray.length; j++) {
+                        if(durationArray[j] == activityData.activityDuration) {
 
-                        for (k = 0; k < timeOfDayArray.length; k++) {
-                        if (timeOfDayArray[k] == activityData.activityTimeOfDay) {
+                            for (k = 0; k < timeOfDayArray.length; k++) {
+                            if (timeOfDayArray[k] == activityData.activityTimeOfDay) {
 
-                            for (m = 0; m < priceArray.length; m++) {
-                            if (priceArray[m] == activityData.activityPrice) {
-                                console.log(activityData.activityName);
-                                console.log(activityData.activityDuration);
+                                for (m = 0; m < priceArray.length; m++) {
+                                if (priceArray[m] == activityData.activityPrice) {
+                                    console.log(activityData.activityName);
+                                    console.log(activityData.activityDuration);
+                                    console.log(activityData.activityTimeOfDay);
+                                    console.log(activityData.activityPrice);
+                                };
+                                };
                             };
                             };
                         };
                         };
                     };
-                    };
-                };
                 };
             });
         });
