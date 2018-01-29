@@ -23,6 +23,7 @@ var activityPrice;
 var activityDescription;
 var streetNumber;
 var streetName;
+var address;
 
 var ref = database.ref();
 
@@ -49,7 +50,9 @@ ref.on('value', getData, errData);
       let city = dowhat[k].city;
       let state = dowhat[k].state;
       let activityPrice = dowhat[k].activityPrice;
- 
+      let address = dowhat[k].address;
+  
+
       // will need to place all of this into seperate function.
       console.log(activityType, activityPrice);
       $('#activity-name').text(activityName);
@@ -57,14 +60,9 @@ ref.on('value', getData, errData);
       $('#activity-duration').text(activityDuration + " hours");
       $('#activity-time').text(activityTimeOfDay);
       $('#activity-description').text(activityDescription);
-      $('#event-location').text(streetNumber + " " + streetName + " " + city + ", " + state);
+      $('#event-location').text(address + " " + city + ", " + state);
       $('#price-range').text("$" + activityPrice);
 
     }
 
-  }
-
-  function errData(err){
-    console.log('Error!');
-    console.log(err);
   }
