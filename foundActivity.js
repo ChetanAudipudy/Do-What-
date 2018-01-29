@@ -34,7 +34,6 @@ ref.on('value', getData, errData);
     var dowhat = data.val();
     var keys = Object.keys(dowhat);
     
-
     // indexing through the keys;
     for(var i = 0; i < keys.length; i++){
       
@@ -55,7 +54,7 @@ ref.on('value', getData, errData);
       console.log(activityType, activityPrice);
       $('#activity-name').text(activityName);
       $('#activity-type').text(activityType);
-      $('#activity-duration').text(activityDuration + " hr(s)");
+      $('#activity-duration').text(activityDuration + " hours");
       $('#activity-time').text(activityTimeOfDay);
       $('#activity-description').text(activityDescription);
       $('#event-location').text(streetNumber + " " + streetName + " " + city + ", " + state);
