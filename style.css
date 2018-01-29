@@ -4,6 +4,8 @@ body,html{
 	background-image: url("http://media.idownloadblog.com/wp-content/uploads/2016/08/5120x2880_pure_minimal.png");
 	background-size: cover;
 	height: 100%;
+    /*font-family: 'Arima Madurai', cursive;*/
+    font-family: 'Philosopher', sans-serif;
 }
 
 a, a:hover {
@@ -35,10 +37,7 @@ h1{
 	justify-content: space-around;
 	font-family: 'Rajdhani', sans-serif;
 }*/
-.rightBox{
 
-	/*background-color: #6d6d6d;*/
-}
 .opScBtn{
 
 	width: 450px;
@@ -57,12 +56,13 @@ input[type=text] {
     background-image: url('searchicon.png');
     background-position: 10px 10px; 
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    padding: 13px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.5s ease-in-out;
 }
 
-input[type=text]:focus {
+input[type=text]:focus,
+input[type=text]:hover{
     width: 100%;
 }
 
