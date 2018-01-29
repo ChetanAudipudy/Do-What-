@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  
+  <title>Modal</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="foundActivity.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+  <!-- Ajax -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+  <!-- Momentjs link -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+</head>
+<body>
+  
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Do What Activity?
+</button>
+
+<!-- Modal -->
+    
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="activity-name-b">Do What?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+      <div class="modal-body">
+        
+      <!-- MODAL foundActivityCode.html Inserted -->
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4" id="activity-name">Activity Name Here</h1>
+        <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+      </div>
+    </div>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Activity Type</h6>
+                <small class="text-muted" id="activity-type">Brief description</small>
+              </div>
+              <!-- <span class="text-muted" id="price-range">$0-20</span> -->
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Activity Duration</h6>
+                <small class="text-muted" id="activity-duration">Brief description</small>
+              </div>
+              <!-- <span class="text-muted">$8</span> -->
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Activity Time</h6>
+                <small class="text-muted" id="activity-time">Brief description</small>
+              </div>
+              <!-- <span class="text-muted">$5</span> -->
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <div>
+                <h6 class="my-0">Activity Description</h6>
+                <small class="text-muted" id="activity-description">text here</small>
+              </div>
+              <!-- <span class="text-success">-$5</span> -->
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Activity Location</h6>
+                <small class="text-muted" id="event-location">post adress concat here</small>
+              </div>
+              <!-- <span class="text-muted">$5</span> -->
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <span>Price Range</span>
+              <strong id="price-range">$20</strong>
+            </li>
+          </ul>
+            <!-- modal close box -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+          <!-- modal close box -->
+          </div>
+        </div>
+      </div> <!-- /container -->
+              </form>
+              <!-- If you place close box code here it is at the bottom left hand corner of the page -->
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <script src="modal.js"></script>
+    <!-- END of foundActivityPageInserted -->
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+    <!-- <script type="text/javascript">
+      
+    $('#exampleModalLong').modal(options);
+
+    </script> -->
+
+</body>
+
+</html>
