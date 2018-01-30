@@ -18,7 +18,6 @@ var timeOfDayArray = [];
 var priceArray = [];
 
 function createCard(){
-
   var outer = $("<div>")
   var card=$("<div>");
   card.attr("class", "card");
@@ -35,11 +34,15 @@ function createCard(){
   $(card).append(cardTitle);
   $(card).append(p);
   $("#card-wrapper").append(card);
-}
+
+};
 
 $(document).ready(function() {
 
     $("#submit").on("click", function() {
+
+        $("#card-wrapper").empty();
+
         // grab values from checkbox inputs and store in respective arrays
         $("input[name='activity[]']:checked").each(function () {
             activityTypeArray.push(this.value);
@@ -54,14 +57,6 @@ $(document).ready(function() {
             priceArray.push(this.value);
         });
 
- // Push input values to firebase
-        database.ref().push({
-            activityType: activityTypeArray,
-            activityDuration: durationArray,
-            activityTimeOfDay: timeOfDayArray,
-            activityPrice: priceArray
-
-        });
         // Create a variable to link to firebase
         var activityRef = firebase.database().ref();
 
@@ -82,9 +77,11 @@ $(document).ready(function() {
 
                             for (m = 0; m < priceArray.length; m++) {
                             if (priceArray[m] == activityData.activityPrice) {
+                              // console.log(activityData.activityName);
+                                createCard();
 
-                                 createCard();
-                                  $(".title").text(activityData.activityName)
+                                $(".card-title").text(activityData.activityName);
+                                // $(".card-text").text(activityData.activityPrice);
 
                             };
                             };
@@ -93,8 +90,9 @@ $(document).ready(function() {
                     };
                     };
                 };
-            };
+                };
+
+            });
         });
     });
 });
-  });

@@ -69,11 +69,11 @@ for (i = 0; i < acc.length; i++) {
 
 
 
-//   $(outer).append(card);
-//   $(card).append(cardBody);
-//   $(card).append(cardTitle);
-//   $(card).append(p);
-//   $("#card-wrapper").append(card);
+  $(outer).append(card);
+  $(card).append(cardBody);
+  $(card).append(cardTitle);
+  $(card).append(p);
+  $("#card-wrapper").append(card);
 
 // }
 // createCard();
