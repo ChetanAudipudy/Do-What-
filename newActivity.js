@@ -13,20 +13,11 @@ firebase.initializeApp(config);
 // Create a variable to reference the database.
 var database = firebase.database();
 
-// // Create a reference with an initial file path and name
-// var storage = firebase.storage();
-// var pathReference = storage.ref('images/stars.jpg');
-
-// // Create a reference from a Google Cloud Storage URI
-// var gsReference = storage.refFromURL('gs://bucket/images/stars.jpg')
-
-// // Create a reference from an HTTPS URL
-// // Note that in the URL, characters are URL escaped!
-// var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/b/bucket/o/images%20stars.jpg');
-
-// var image;
+// Create variables for input values
 var activityName;
-var street;
+var streetNumber;
+var streetName;
+var address;
 var city;
 var state;
 var activityType;
@@ -35,24 +26,10 @@ var activityTimeOfDay;
 var activityPrice;
 var activityDescription;
 
-// create function for input validation
-// function inputValidation(){
-
-//   // create array of variables
-// function inputValidation () {
-
-//   var inputArray =[activityName, activityType, activityDuration, activityTimeOfDay, activityPrice]
-
-//   for (var i = 0; i < inputArray.length; i++) {
-//     if(inputArray[i] == ""){
-//       $("#error").html('Please fill out required fields.');
-//     }
-//   }
-// }
 
 $(document).ready(function() {
 
-// whenever a user clicks the button
+  // When add-activity button is clicked, grab input values and push to Firebase
   $("#add-activity").on("click", function() {
 
     // get the input values
@@ -66,23 +43,16 @@ $(document).ready(function() {
     activityTimeOfDay = $("#timeOfDay").val().trim();
     activityPrice = $("#price").val().trim();
     activityDescription = $("#description").val().trim();
-    // image = $("#fileToUpload").val().trim();
 
-    console.log(activityName);
-    console.log(streetNumber);
-    console.log(streetName);
-    console.log(city);
-    console.log(state);
-    console.log(activityType);
-    console.log(activityDuration);
-    console.log(activityTimeOfDay);
-    console.log(activityPrice);
+    // Consolidate address
+    address = (streetNumber + " " + streetName);
 
-    // push to firebase
+    console.log(address);
+
+    // Push input values to firebase
     database.ref().push({
       activityName: activityName,
-      streetNumber: streetNumber,
-      streetName: streetName,
+      address: address,
       city: city,
       state: state,
       activityType: activityType,
@@ -91,12 +61,10 @@ $(document).ready(function() {
       activityPrice: activityPrice,
       activityDescription: activityDescription,
     });
-
   });
-
 });
 
-// Google API location and form autocomplete
+// Link to Google address auto-complete API
 var placeSearch, autocomplete;
 var componentForm = {
   street_number: 'short_name',
@@ -116,15 +84,6 @@ function initAutocomplete() {
 
   // When the user selects an address from the dropdown, populate the address
   // fields in the form.
-  autocomplete.addListener('place_changed', fillInAddress);
-}
-
-function initAutocomplete() {
-
-  autocomplete = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-      {types: ['(cities)']});
-
   autocomplete.addListener('place_changed', fillInAddress);
 }
 
@@ -164,4 +123,4 @@ function geolocate() {
       autocomplete.setBounds(circle.getBounds());
     });
   }
-}
+};

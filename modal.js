@@ -27,7 +27,7 @@ var address;
 
 var ref = database.ref();
 
-ref.on('value', getData, errData);
+ref.on('value', getData);
 
   // function to retrieve data.
   function getData(data) {
@@ -62,6 +62,7 @@ ref.on('value', getData, errData);
       $('#activity-description').text(activityDescription);
       $('#event-location').text(address + " " + city + ", " + state);
       $('#price-range').text("$" + activityPrice);
+      $('#activity-name-b').text(activityName);
 
     }
 
