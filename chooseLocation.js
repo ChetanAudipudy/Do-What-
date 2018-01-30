@@ -1,7 +1,3 @@
-$(document).ready(function() {
-
-	$("#rightBox").html("<h3> Choose a location! </h3> <input id='city' name='city' autocomplete='on' data-country='us'> ");
-})
 
 var string;
 var city;
@@ -19,15 +15,16 @@ $("#submit").on("click", function(event) {
 
     $("#dynamicDiv").text(city);
 
-    var findActivity = $('<button/>').attr({
+    var findActivity = $("<a href = 'search.html'>").attr({
       class: "btn btn-dark",
-      style: "width: 350px",
+      style: "width: 300px",
     }).text('Find Activity');
 
-    var createActivity = $('<button/>').attr({
+    var createActivity = $("<a href = 'newActivity.html'>").attr({
       class: "btn btn-dark",
-      style: "width: 350px",
+      style: "width: 300px",
     }).text('Create Activity');
+
 
     $("#locationField").text("");
     $("#buttons").append(findActivity);
