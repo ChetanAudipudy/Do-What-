@@ -96,3 +96,15 @@ input[type=text]:hover{
 }
 /* accordionn css ends here */
 
+/*New activity*/
+
+.error{
+    display: none;
+    margin-left: 10px;
+}
+
+.error_show{
+    color: red;
+    margin-left: 10px;
+}
+

@@ -18,6 +18,7 @@
   <!-- Bootstrap CDN-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="newActivity.css">
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvlvuBqoM_v-3KtJRu2REtvHxxU2995So&libraries=places&callback=initAutocomplete" async defer></script>
 
@@ -32,7 +33,7 @@
   <!-- Add an Employee -->
   <div class="row">
     <div class="col-lg-12">
-      <div class="panel panel-default">
+      <div class="panel panel-default createActivityBox">
         <div class="panel-heading">
           <h3 class="panel-title">Create Activity</h3>
         </div>
@@ -53,13 +54,13 @@
 
         <table class="table" id="address">
           <tr>
-            <td class="slimField">
+            <td class="slimField" colspan="1">
               <label for="type">Address Number</label>
               <br>
               <input class="field" id="street_number" disabled="true"></input>
             </td>
 
-            <td class="wideField" colspan="2">
+            <td class="slimField" colspan="1">
               <label for="type">Street Name</label>
               <br>
               <input class="field" id="route" disabled="true"></input>
@@ -67,13 +68,13 @@
           </tr>
 
           <tr>
-            <td class="wideField" colspan="2">
+            <td class="slimField" colspan="1">
               <label for="type">City</label>
               <br>
               <input class="field" id="locality" disabled="true"></input>
             </td>
 
-            <td class="wideField" colspan="2">
+            <td class="slimField" colspan="1">
               <label for="type">State</label>
               <br>
               <input class="field" id="administrative_area_level_1" disabled="true"></input>
@@ -81,12 +82,12 @@
           </tr>
 
           <tr>
-            <td class="wideField" colspan="2">
+            <td class="slimField">
               <label for="type">Zip Code</label>
               <br>
               <input class="field" id="postal_code" disabled="true"></input>
             </td>
-            <td class="wideField" colspan="2">
+            <td class="slimField" colspan="1">
               <label for="type">Country</label>
               <br>
               <input class="field" id="country" disabled="true"></input>
