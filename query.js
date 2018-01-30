@@ -83,15 +83,9 @@ $(document).ready(function() {
                             for (m = 0; m < priceArray.length; m++) {
                             if (priceArray[m] == activityData.activityPrice) {
 
-                                for (m = 0; m < priceArray.length; m++) {
-                                if (priceArray[m] == activityData.activityPrice) {
-
-                                  createCard();
+                                 createCard();
                                   $(".title").text(activityData.activityName)
 
-
-                                };
-                                };
                             };
                             };
                         };
