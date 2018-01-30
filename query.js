@@ -17,6 +17,26 @@ var durationArray = [];
 var timeOfDayArray = [];
 var priceArray = [];
 
+function createCard(){
+
+  var outer = $("<div>")
+  var card=$("<div>");
+  card.attr("class", "card");
+  card.attr("style" , "width : 18rem;");
+  var cardBody=$("<div>");
+  card.attr("class", "card-body");
+  var cardTitle=$("<h5> test the title </h5>");
+  cardTitle.attr("class", "card-title");
+  var p =$("<p>this is the random text</p>");
+  p.attr("class","card-text");
+
+  $(outer).append(card);
+  $(card).append(cardBody);
+  $(card).append(cardTitle);
+  $(card).append(p);
+  $("#card-wrapper").append(card);
+}
+
 $(document).ready(function() {
 
     $("#submit").on("click", function() {
@@ -57,8 +77,9 @@ $(document).ready(function() {
 
                             for (m = 0; m < priceArray.length; m++) {
                             if (priceArray[m] == activityData.activityPrice) {
-                                console.log(activityData.activityName);
-                                console.log(activityData.activityDuration);
+
+                                createCard();
+                                $(".title").text(activityData.activityName)
                             };
                             };
                         };
