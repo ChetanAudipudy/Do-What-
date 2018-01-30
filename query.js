@@ -10,7 +10,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-const database = firebase.database().ref();
+var database = firebase.database();
 
 var activityTypeArray = [];
 var durationArray = [];
@@ -53,10 +53,15 @@ $(document).ready(function() {
         $("input[name='pricePoint[]']:checked").each(function () {
             priceArray.push(this.value);
         });
-        $("input[name='pricePoint[]']:checked").each(function () {
-            priceArray.push(this.value);
-        });
 
+ // Push input values to firebase
+        database.ref().push({
+            activityType: activityTypeArray,
+            activityDuration: durationArray,
+            activityTimeOfDay: timeOfDayArray,
+            activityPrice: priceArray
+
+        });
         // Create a variable to link to firebase
         var activityRef = firebase.database().ref();
 
@@ -70,7 +75,7 @@ $(document).ready(function() {
                 if (activityTypeArray[i] == activityData.activityType) {
 
                     for (j = 0; j < durationArray.length; j++) {
-                    if (durationArray[j] == activityData.activityDuration) {
+                    if(durationArray[j] == activityData.activityDuration) {
 
                         for (k = 0; k < timeOfDayArray.length; k++) {
                         if (timeOfDayArray[k] == activityData.activityTimeOfDay) {
@@ -78,8 +83,15 @@ $(document).ready(function() {
                             for (m = 0; m < priceArray.length; m++) {
                             if (priceArray[m] == activityData.activityPrice) {
 
-                                createCard();
-                                $(".title").text(activityData.activityName)
+                                for (m = 0; m < priceArray.length; m++) {
+                                if (priceArray[m] == activityData.activityPrice) {
+
+                                  createCard();
+                                  $(".title").text(activityData.activityName)
+
+
+                                };
+                                };
                             };
                             };
                         };
@@ -87,8 +99,8 @@ $(document).ready(function() {
                     };
                     };
                 };
-                };
-            });
+            };
         });
     });
 });
+  });
