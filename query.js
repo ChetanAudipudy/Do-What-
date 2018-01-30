@@ -7,39 +7,58 @@ var config = {
   storageBucket: "dowhat-946f1.appspot.com",
   messagingSenderId: "39741177926"
 };
-
 firebase.initializeApp(config);
-
 var database = firebase.database();
-
 var activityTypeArray = [];
 var durationArray = [];
 var timeOfDayArray = [];
 var priceArray = [];
+var id = 0;
+
+
+$(document).ready(function() {
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight){
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+});
 
 function createCard(){
+
+  id++;
+
   var outer = $("<div>")
   var card=$("<div>");
   card.attr("class", "card");
   card.attr("style" , "width : 18rem;");
+  card.attr("id" , id);
+  card.text(id);
   var cardBody=$("<div>");
   card.attr("class", "card-body");
   var cardTitle=$("<h5> test the title </h5>");
   cardTitle.attr("class", "card-title");
-  var p =$("<p>this is the random text</p>");
+  var p =$("<div>");
   p.attr("class","card-text");
-
   $(outer).append(card);
   $(card).append(cardBody);
   $(card).append(cardTitle);
   $(card).append(p);
   $("#card-wrapper").append(card);
-
 };
 
 $(document).ready(function() {
-
     $("#submit").on("click", function() {
+        id = 0;
 
         $("#card-wrapper").empty();
 
@@ -56,14 +75,14 @@ $(document).ready(function() {
         $("input[name='pricePoint[]']:checked").each(function () {
             priceArray.push(this.value);
         });
-
         // Create a variable to link to firebase
         var activityRef = firebase.database().ref();
-
         // Reference data objects in Firebase
+
         activityRef.on('value', function(snapshot) {
             snapshot.forEach(function(childSnapshot) {
               var activityData = childSnapshot.val();
+            });
 
                 // Compare data object child values to input values in array with for loop
                 for (i = 0; i < activityTypeArray.length; i++) {
@@ -77,14 +96,12 @@ $(document).ready(function() {
 
                             for (m = 0; m < priceArray.length; m++) {
                             if (priceArray[m] == activityData.activityPrice) {
-                              // console.log(activityData.activityName);
 
                                 createCard();
-
                                 $(".card-title").text(activityData.activityName);
+                                $(".card-text").text(activityData.activityPrice);
                                 // $(".card-text").text(activityData.activityPrice);
-
-
+                                break;
                             };
                             };
                         };
@@ -93,8 +110,6 @@ $(document).ready(function() {
                     };
                 };
                 };
-
             });
         });
     });
-});
