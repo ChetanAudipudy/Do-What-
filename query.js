@@ -17,6 +17,26 @@ var durationArray = [];
 var timeOfDayArray = [];
 var priceArray = [];
 
+function createCard(){
+
+  var outer = $("<div>")
+  var card=$("<div>");
+  card.attr("class", "card");
+  card.attr("style" , "width : 18rem;");
+  var cardBody=$("<div>");
+  card.attr("class", "card-body");
+  var cardTitle=$("<h5> test the title </h5>");
+  cardTitle.attr("class", "card-title");
+  var p =$("<p>this is the random text</p>");
+  p.attr("class","card-text");
+
+  $(outer).append(card);
+  $(card).append(cardBody);
+  $(card).append(cardTitle);
+  $(card).append(p);
+  $("#card-wrapper").append(card);
+}
+
 $(document).ready(function() {
 
     $("#submit").on("click", function() {
@@ -33,9 +53,7 @@ $(document).ready(function() {
         $("input[name='pricePoint[]']:checked").each(function () {
             priceArray.push(this.value);
         });
-        $("input[name='pricePoint[]']:checked").each(function () {
-            priceArray.push(this.value);
-        });
+
  // Push input values to firebase
         database.ref().push({
             activityType: activityTypeArray,
@@ -51,23 +69,27 @@ $(document).ready(function() {
         activityRef.on('value', function(snapshot) {
             snapshot.forEach(function(childSnapshot) {
               var activityData = childSnapshot.val();
-console.log(activityData);
+
                 // Compare data object child values to input values in array with for loop
                 for (i = 0; i < activityTypeArray.length; i++) {
-                    if (activityTypeArray[i] == activityData.activityType) {
+                if (activityTypeArray[i] == activityData.activityType) {
 
-                        for (j = 0; j < durationArray.length; j++) {
-                        if(durationArray[j] == activityData.activityDuration) {
+                    for (j = 0; j < durationArray.length; j++) {
+                    if(durationArray[j] == activityData.activityDuration) {
 
-                            for (k = 0; k < timeOfDayArray.length; k++) {
-                            if (timeOfDayArray[k] == activityData.activityTimeOfDay) {
+                        for (k = 0; k < timeOfDayArray.length; k++) {
+                        if (timeOfDayArray[k] == activityData.activityTimeOfDay) {
+
+                            for (m = 0; m < priceArray.length; m++) {
+                            if (priceArray[m] == activityData.activityPrice) {
 
                                 for (m = 0; m < priceArray.length; m++) {
                                 if (priceArray[m] == activityData.activityPrice) {
-                                    console.log(activityData.activityName);
-                                    console.log(activityData.activityDuration);
-                                    console.log(activityData.activityTimeOfDay);
-                                    console.log(activityData.activityPrice);
+
+                                  createCard();
+                                  $(".title").text(activityData.activityName)
+
+
                                 };
                                 };
                             };
@@ -75,8 +97,10 @@ console.log(activityData);
                         };
                         };
                     };
+                    };
                 };
-            });
+            };
         });
     });
 });
+  });
