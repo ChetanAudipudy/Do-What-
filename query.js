@@ -112,7 +112,7 @@ $(document).ready(function() {
                                     // $(card).append(p);
                                     $(cardBody).append(button);
 
-                                    $("#titleID" + cardID).text(activityData.activityNamec);
+                                    $("#titleID" + cardID).text(activityData.activityName);
                                     $("#textID" + cardID).text("Price: " + activityData.activityPrice);
 
                                     cardID++;
