@@ -13,6 +13,12 @@ $("#submit").on("click", function(event) {
     state = string.split(", ")[1];
     country = string.split(", ")[2];
 
+    sessionStorage.setItem("cityInput" , city);
+
+    var cityDiv = $("<div>");
+    cityDiv.attr("style" , "font-size: 100px");
+    cityDiv.append(city);
+    $("#dynamicDiv").cityDiv;
     $("#dynamicDiv").text(city);
 
     var findActivity = $("<a href = 'search.html'>").attr({

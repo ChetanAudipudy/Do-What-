@@ -5,6 +5,8 @@
 	<meta charset="utf-8">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Radley" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	 <!-- Firebase Reference -->
@@ -18,16 +20,10 @@
 		<div class="row h-100">
 		
 			<div class="col-md-2"  style="background-color: #000000 ;box-shadow: 0px 10px 5px grey">
-
-				<div class="row bg-light">Do What?</div>
-
-				<div class="row"></div>
-
-				<div class="row">
-					<!-- Animated Search Bar -->
-					<input type="text" name="search" placeholder="Search...">
+				<div class="row text-center">
+				<h1 class = "text-center" style="color: white ; font-family: 'Raleway', sans-serif; width: 100%">Do What?</h1>
+				<h2 class="text-center" style="color: white; font-family: 'Radley', serif; width: 100%" id="userInputCity"></h2>
 				</div>
-
 				<div class="row">
 					<!-- accordion start -->
 					<button class="accordion">Activity Type</button>
@@ -196,9 +192,9 @@
 						</div>
 					</div>
 				</div>
-
+				<br>
 				<div class=“row”>
-                    <button class="btn btn-dark " id="submit" type="submit">Submit</button>
+                    <button class="btn btn-lg btn-light " id="submit" type="submit" style="width: 100%">Submit</button>
                 </div>
 
 			</div>
@@ -209,8 +205,8 @@
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- <script src="jquery.geocomplete.js"></script> -->
 	<script type="text/javascript" src="js.js"></script>
+	<script type="text/javascript" src="search.js"></script>
 	<script type="text/javascript" src="query.js"></script>
 </body>
 </html>
