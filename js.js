@@ -67,14 +67,6 @@ for (i = 0; i < acc.length; i++) {
 //   var p =$("<p>this is the random text</p>");
 //   p.attr("class","card-text");
 
-
-
-  $(outer).append(card);
-  $(card).append(cardBody);
-  $(card).append(cardTitle);
-  $(card).append(p);
-  $("#card-wrapper").append(card);
-
 // }
 // createCard();
 // createCard();
