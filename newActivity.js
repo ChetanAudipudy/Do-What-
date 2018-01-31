@@ -25,6 +25,7 @@ var activityDuration;
 var activityTimeOfDay;
 var activityPrice;
 var activityDescription;
+var activityID = 0;
 
 
 $(document).ready(function() {
@@ -43,6 +44,7 @@ $(document).ready(function() {
     activityTimeOfDay = $("#timeOfDay").val().trim();
     activityPrice = $("#price").val().trim();
     activityDescription = $("#description").val().trim();
+
 
     // Consolidate address
     address = (streetNumber + " " + streetName);
