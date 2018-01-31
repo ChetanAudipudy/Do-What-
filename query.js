@@ -21,22 +21,24 @@ var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  });
-}
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight){
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        };
+    });
+};
 
 var cardID = 0;
 
 $(document).ready(function() {
 
     $("#submit").on("click", function() {
+
+        var userCity = sessionStorage.getItem("cityInput");
 
         $(".card-container").text("");
 
@@ -78,50 +80,48 @@ $(document).ready(function() {
                                 for (m = 0; m < priceArray.length; m++) {
                                 if (priceArray[m] == activityData.activityPrice) {
 
-                                  function createCard(){
+                                    if (userCity == activityData.activityCity) {
 
+                                        function createCard(){
 
-                                    var card = $("<div>");
-                                    card.addClass('card');
-                                    card.attr("width", "14rem;");
+                                            var card = $("<div>");
+                                            card.addClass('card');
+                                            card.attr("width", "14rem;");
 
-                                    var cardBody = $("<div>");
-                                    card.addClass('card-body');
+                                            var cardBody = $("<div>");
+                                            card.addClass('card-body');
 
-                                    var cardTitle = $("<div>");
-                                    cardTitle.addClass('card-title');
+                                            var cardTitle = $("<div>");
+                                            cardTitle.addClass('card-title');
 
-                                    // var p = $("<div>");
-                                    // p.addClass('card-text');
+                                            var button = $('<button/>').attr("class", "btn btn-dark detail-button").text("Details");
 
-                                    var button = $('<button/>').attr("class", "btn btn-dark detail-button").text("Details");
+                                            var title = $("<div>");
+                                            title.attr("id", "titleID" + cardID)
+                                            title.addClass('card-title')
 
-                                    var title = $("<div>");
-                                    title.attr("id", "titleID" + cardID)
-                                    title.addClass('card-title')
+                                            var text = $("<div>");
+                                            text.attr("id", "textID" + cardID)
+                                            text.addClass('')
 
-                                    var text = $("<div>");
-                                    text.attr("id", "textID" + cardID)
-                                    text.addClass('')
+                                            $(".card-container").append(card);
+                                            $(card).append(cardBody);
 
-                                    $(".card-container").append(card);
-                                    $(card).append(cardBody);
+                                            $(cardBody).append(title);
+                                            $(cardBody).append(text);
+                                            // $(card).append(p);
+                                            $(cardBody).append(button);
 
-                                    $(cardBody).append(title);
-                                    $(cardBody).append(text);
-                                    // $(card).append(p);
-                                    $(cardBody).append(button);
+                                            $("#titleID" + cardID).text(activityData.activityName);
+                                            $("#textID" + cardID).text("Price: " + activityData.activityPrice);
 
-                                    $("#titleID" + cardID).text(activityData.activityName);
-                                    $("#textID" + cardID).text("Price: " + activityData.activityPrice);
+                                            cardID++;
 
-                                    cardID++;
+                                        };
 
-                                  }
+                                        createCard();
 
-                                  console.log(activityData.activityName);
-
-                                  createCard();
+                                    };
 
                                 };
                                 };
@@ -132,8 +132,8 @@ $(document).ready(function() {
                     };
                     };
                 };
-            };
+                };
+            });
         });
     });
-  });
 });
