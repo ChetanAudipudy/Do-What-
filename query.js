@@ -34,40 +34,6 @@ for (i = 0; i < acc.length; i++) {
 
 var cardID = 0;
 
-// function createCard(){
-
-//   var outer = $("<div>")
-//   var card = $("<div>");
-//   card.addClass('card');
-//   card.attr("width", "14rem;");
-
-//   var cardBody = $("<div>");
-//   card.addClass('card-body');
-
-//   var cardTitle = $("<div>");
-//   cardTitle.addClass('card-title');
-
-//   var p = $("<div>");
-//   p.addClass('card-text');
-
-//   var button = $('<button/>').attr("class", "btn btn-dark detail-button").text("Details");
-
-//   var title = $("<div>");
-//   title.attr("id", "titleID" + cardID)
-
-//   var text = $("<div>");
-//   text.attr("id", "textID" + cardID)
-
-//   $(".card-container").append(card);
-//   $(card).append(title);
-//   $(card).append(text);
-//   $(card).append(p);
-//   $(card).append(button);
-
-//   cardID++;
-
-// }
-
 $(document).ready(function() {
 
     $("#submit").on("click", function() {
