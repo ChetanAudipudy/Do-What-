@@ -18,6 +18,28 @@ h1{
 	/*font-weight: bold;*/
 }
 
+.card {
+    background: white;
+    text-align: center;
+    margin: 10px;
+    width: 50px;
+    height: 200px;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+
+/*        // <div class="card" style="width: 14rem;">
+
+        //   <div class="card-body">
+        //     <h5 class="card-title">Card title</h5>
+        //     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        //     <a href="#" class="btn btn-dark">Go somewhere</a>
+        //   </div>
+        // </div>*/
+
 /*.activityBox{
 	position: absolute;
 	top: 55%;
@@ -32,7 +54,7 @@ h1{
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
-	
+
 	align-items: center;
 	justify-content: space-around;
 	font-family: 'Rajdhani', sans-serif;
@@ -41,7 +63,7 @@ h1{
 .opScBtn{
 
 	width: 450px;
-	
+
 }
 
 
@@ -54,7 +76,7 @@ input[type=text] {
     font-size: 16px;
     background-color: white;
     background-image: url('searchicon.png');
-    background-position: 10px 10px; 
+    background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 13px;
     -webkit-transition: width 0.4s ease-in-out;
