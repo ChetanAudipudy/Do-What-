@@ -2,19 +2,20 @@
 <html>
 <head>
 
-	<title>Choose a Location</title>
+	<title>Do What?</title>
 	<meta charset="utf-8">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-	<link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 <body>
-		<div class="jumbotron text-center" style=" background-color: #f7f7f7 ; box-shadow: 0px 2px 5px grey ">
-			<h1 style="font-size: 75px ; font-family: 'Playball', cursive;">Do What?</h1>
+		<div class="jumbotron text-center" style=" height : 200px ; background-color: #f7f7f7 ; box-shadow: 0px 2px 5px grey">
+			<h1 style="width : 100% ; font-size: 75px ; font-family: 'Raleway', sans-serif;"><a class = "type" href="index.html"></a></h1>
+
 			
 		</div>
 		<br>
@@ -23,24 +24,30 @@
 		<div class="row h-100 ">
 			<div class="col-lg-12 text-center introText">
 				
-			<div id="dynamicDiv" style="font-weight: bold ; font-size: 25px; width: 300px">
+				<div id="dynamicDiv" style="font-weight: bold ; font-size: 25px; width: 300px">
 				Search for a location:
-			</div>
-			<br>
+				</div>
+				<br>
 
-			<div id="buttons"></div>
+				<div id="buttons">
+				</div>
 
-			<div id="locationField" class="form">
-		        <input id="autocomplete" placeholder="Search Here" role = "search" onFocus="geolocate()" type="text"></input>
-		        <br><br>
-	        	<button class="btn btn-dark" id="submit" type="submit" style="width: 120px">Submit</button>
-	        </div>
+				<div id="locationField" class="form">
+		       	 <input id="autocomplete" placeholder="Search Here" role = "search" onFocus="geolocate()" type="text"></input>
+		        	<br><br>
+	        		<button class="btn btn-dark" id="submit" type="submit" style="width: 120px">Submit</button>
+	        	</div>
 	    </div>
+	    <div id="aboutTeam"><a href="about.html"><img src="data:image/png;base64,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" style= "width: 40px"></a></div>
 	</div>
+
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvlvuBqoM_v-3KtJRu2REtvHxxU2995So&libraries=places&callback=initAutocomplete" async defer></script>
-	<script type="text/javascript" src="chooseLocation.js"></script>
+	<script type="text/javascript" src="assets/js/typed.js"></script>
+	<script type="text/javascript" src="assets/js/chooseLocation.js"></script>
+	
 
 </body>
 </html>

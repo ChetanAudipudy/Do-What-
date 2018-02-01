@@ -1,21 +1,14 @@
 body,html{
-	/*background-image: url("http://goldwallpapers.com/uploads/posts/plain-white-wallpaper/plain_white_wallpaper_019.jpg");*/
-	/*background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/06/HD-Minimalist-Photo.png"); */
 	background-image: url("http://media.idownloadblog.com/wp-content/uploads/2016/08/5120x2880_pure_minimal.png");
 	background-size: cover;
+    background-repeat: repeat-y;
 	height: 100%;
-    /*font-family: 'Arima Madurai', cursive;*/
-    font-family: 'Philosopher', sans-serif;
+   font-family: 'Raleway', sans-serif;
 }
 
 a, a:hover {
     text-decoration: none;
     color: black;
-}
-
-h1{
-
-	font-weight: bold;
 }
 
 .card {
@@ -30,46 +23,32 @@ h1{
     font-weight: bold;
 }
 
+.accordionDiv{
 
-/*        // <div class="card" style="width: 14rem;">
+    overflow-y: scroll;
+}
+#style-4::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
 
-        //   <div class="card-body">
-        //     <h5 class="card-title">Card title</h5>
-        //     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        //     <a href="#" class="btn btn-dark">Go somewhere</a>
-        //   </div>
-        // </div>*/
+#style-4::-webkit-scrollbar
+{
+    width: 1px;
+    background-color: #F5F5F5;
+}
 
-/*.activityBox{
-	position: absolute;
-	top: 55%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 600px;
-	height: 250px;
-	padding: 40px;
-	background: rgba(0,0,0,.8);
-	box-sizing: border-box;
-	box-shadow: 0 15px 25px rgba(0,0,0,.5);
-	border-radius: 10px;
-	display: flex;
-	flex-direction: column;
-
-	align-items: center;
-	justify-content: space-around;
-	font-family: 'Rajdhani', sans-serif;
-}*/
-
-.opScBtn{
-
-	width: 450px;
-
+#style-4::-webkit-scrollbar-thumb
+{
+    background-color: #000000;
+    border: 2px solid #555555;
 }
 
 
 /* search bar code */
 input[type=text] {
-    width: 120px;
+    width: 123px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -78,7 +57,7 @@ input[type=text] {
     background-image: url('searchicon.png');
     background-position: 10px 10px;
     background-repeat: no-repeat;
-    padding: 13px;
+    padding: 12px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.5s ease-in-out;
 }
@@ -86,6 +65,17 @@ input[type=text] {
 input[type=text]:focus,
 input[type=text]:hover{
     width: 100%;
+}
+
+#aboutTeam{
+
+    display: fixed;
+    position: absolute;
+    top: 90%;
+    left: 90%;
+    width: 10px;
+    height: 10px;
+
 }
 
 
