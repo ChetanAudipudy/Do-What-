@@ -1,0 +1,46 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+#box1{
+	height: 100vh;
+	width: 100%;
+	background-image: url("https://i.imgur.com/GGU7mJU.jpg");
+	background-size: cover;
+	display: table;
+	background-attachment: fixed;
+}
+#box2{
+	height: 100vh;
+	width: 100%;
+	background-image: url("https://i.imgur.com/VUxXrCh.jpg");
+	background-size: cover;
+	display: table;
+	background-attachment: fixed;
+}
+#box3{
+	height: 100vh;
+	width: 100%;
+	background-image: url("https://i.imgur.com/NMBiX4R.jpg");
+	background-size: cover;
+	display: table;
+	background-attachment: fixed;
+}
+#box4{
+	height: 100vh;
+	width: 100%;
+	background-image: url("https://i.imgur.com/OuNl8td.jpg");
+	background-size: cover;
+	display: table;
+	background-attachment: fixed;
+}
+h1{
+	font-family: arial black;
+	font-size: 50px;
+	color: white;
+	margin: 0px;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}

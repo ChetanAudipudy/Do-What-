@@ -125,7 +125,7 @@ $(document).ready(function() {
 
                                         createCard();
 
-                                        $(document).on("click" , $(this) , function(e){
+                                        $(document).on("click" , "#btnID" + cardID , function(e){
                                              bootbox.dialog({
                                                 title: '<h1 class = "text-center">' + activityData.activityName + '</h1>',
                                                 message: activityData.activityPrice

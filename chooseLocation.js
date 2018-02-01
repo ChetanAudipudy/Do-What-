@@ -78,3 +78,19 @@ function geolocate() {
     });
   };
 };
+
+var typed = new Typed('.type', {
+  strings: ["Do What?",
+    "Do When?",
+    "Do Where?",
+    "DO NOW!"],
+  typeSpeed : 75,
+    backDelay : 1500,
+    smartBackspace : false,
+    loop : true,
+    showCursor : false,
+    backSpeed : 60
+    
+});
+
+
