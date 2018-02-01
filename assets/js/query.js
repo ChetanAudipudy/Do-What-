@@ -113,7 +113,7 @@ $(document).ready(function() {
 
                                             $(cardBody).append(title);
                                             $(cardBody).append(text);
-                                            // $(card).append(p);
+                                          
                                             $(cardBody).append(button);
 
                                             $("#titleID" + cardID).html(activityData.activityName + "<br><br>");
