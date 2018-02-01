@@ -19,13 +19,13 @@
 
 		<div class="row h-100">
 
-			<div class="col-md-2"  style="background-color: #000000 ;box-shadow: 0px 10px 5px grey">
+			<div class="col-md-2 accordionDiv scrollbar"  style="background-color: #000000 ;box-shadow: 0px 10px 5px grey" id="style-4">
 
 				<div class="row text-center">
-				<h1 class = "text-center" style="color: white ; font-family: 'Raleway', sans-serif; width: 100%">Do What?</h1>
-				<h2 class="text-center" style="color: white; font-family: 'Radley', serif; width: 100%" id="userInputCity"></h2>
+				<h1 class = "text-center" style="background-color: #f7f7f7; color: black ; font-family: 'Raleway', sans-serif; width: 100%; padding: 30px">Do What?</h1>
+				<h2 class="text-center" style="color: white; font-family: 'Raleway', sans-serif; width: 100%" id="userInputCity"></h2>
 				</div>
-				<div class="row">
+				<div class="row bg-light">
 					<!-- accordion start -->
 					<button class="accordion">Activity Type</button>
 					<div class="panel">
@@ -182,36 +182,31 @@
 					</div>
 				</div>
 
-				<div class="row">
-					<button class="accordion">Family Friendly</button>
-					<div class="panel">
-						<div class="checkbox">
-							<label><input
-								type="checkbox"
-								name="familyFriendly[]"
-								value="family"> All Ages</label>
-						</div>
-					</div>
-				</div>
-
 				<br>
 				<div class=“row”>
                     <button class="btn btn-lg btn-light " id="submit" type="submit" style="width: 100%">Submit</button>
                 </div>
 
+               
+
 
 			</div>
 
-
-		<div class="card-container col-md-10 d-flex flex-wrap justify-content-around"></div>
-
-		<div class="col-md-10 d-flex justify-content-around align-items-center flex-wrap" id="card-wrapper"></div>
-
+		<div class="card-container col-md-10 d-flex justify-content-around align-items-center flex-wrap" id="card-wrapper">
+			
 		</div>
+		 
+		
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="modal.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 	<script type="text/javascript" src="search.js"></script>
 
 	<script type="text/javascript" src="query.js"></script>

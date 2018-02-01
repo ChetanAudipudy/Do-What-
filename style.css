@@ -3,6 +3,7 @@ body,html{
 	/*background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/06/HD-Minimalist-Photo.png"); */
 	background-image: url("http://media.idownloadblog.com/wp-content/uploads/2016/08/5120x2880_pure_minimal.png");
 	background-size: cover;
+    background-repeat: repeat-y;
 	height: 100%;
     /*font-family: 'Arima Madurai', cursive;*/
    font-family: 'Raleway', sans-serif;
@@ -29,6 +30,29 @@ h1{
 .card-title {
     font-weight: bold;
 }
+
+.accordionDiv{
+
+    overflow-y: scroll;
+}
+#style-4::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar
+{
+    width: 1px;
+    background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb
+{
+    background-color: #000000;
+    border: 2px solid #555555;
+}
+
 
 
 /*        // <div class="card" style="width: 14rem;">

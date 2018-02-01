@@ -80,7 +80,7 @@ $(document).ready(function() {
                                 for (m = 0; m < priceArray.length; m++) {
                                 if (priceArray[m] == activityData.activityPrice) {
 
-                                    if (userCity == activityData.activityCity) {
+                                    // if (userCity == activityData.activityCity) {
 
                                         function createCard(){
 
@@ -94,7 +94,11 @@ $(document).ready(function() {
                                             var cardTitle = $("<div>");
                                             cardTitle.addClass('card-title');
 
-                                            var button = $('<button/>').attr("class", "btn btn-dark detail-button").text("Details");
+                                            var btnID = "btnID" + cardID;
+                                            var button = $('<button/>');
+                                            button.attr("class", "btn btn-dark detail-button");
+                                            button.attr("id" , btnID);
+                                            button.text("Details");
 
                                             var title = $("<div>");
                                             title.attr("id", "titleID" + cardID)
@@ -112,8 +116,8 @@ $(document).ready(function() {
                                             // $(card).append(p);
                                             $(cardBody).append(button);
 
-                                            $("#titleID" + cardID).text(activityData.activityName);
-                                            $("#textID" + cardID).text("Price: " + activityData.activityPrice);
+                                            $("#titleID" + cardID).html(activityData.activityName + "<br><br>");
+                                            $("#textID" + cardID).html("Price: " + activityData.activityPrice + "<br><br>");
 
                                             cardID++;
 
@@ -121,7 +125,15 @@ $(document).ready(function() {
 
                                         createCard();
 
-                                    };
+                                        $(document).on("click" , $(this) , function(e){
+                                             bootbox.dialog({
+                                                title: '<h1 class = "text-center">' + activityData.activityName + '</h1>',
+                                                message: activityData.activityPrice
+                                                });
+                                        })
+
+                                             
+                                    // };
 
                                 };
                                 };
