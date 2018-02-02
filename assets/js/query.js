@@ -17,6 +17,9 @@ var durationArray = [];
 var timeOfDayArray = [];
 var priceArray = [];
 
+
+
+var activity_Name;
 var acc = document.getElementsByClassName("accordion");
 var i;
 
@@ -26,21 +29,33 @@ for (i = 0; i < acc.length; i++) {
         var panel = this.nextElementSibling;
         if (panel.style.maxHeight){
           panel.style.maxHeight = null;
-        } else {
+      } else {
           panel.style.maxHeight = panel.scrollHeight + "px";
-        };
-    });
+      };
+  });
 };
 
 var cardID = 0;
 
 $(document).ready(function() {
 
+//     var database = firebase.database().ref();
+//     database.on("value" , function(snapshot){
+//         snapshot.forEach(function(childSnapshot){
+
+//         })
+//         var actData = snapshot.val();
+//         createCard();
+//     })
+
+
     $("#submit").on("click", function() {
 
         var userCity = sessionStorage.getItem("cityInput");
 
-        $(".card-container").text("");
+        console.log(userCity);
+
+        $("#card-wrapper").empty();
 
         // grab values from checkbox inputs and store in respective arrays
         $("input[name='activity[]']:checked").each(function () {
@@ -60,27 +75,26 @@ $(document).ready(function() {
         var activityRef = firebase.database().ref();
 
         // Reference data objects in Firebase
-        activityRef.on('value', function(snapshot) {
+        activityRef.once('value', function(snapshot) {
             snapshot.forEach(function(childSnapshot) {
               var activityData = childSnapshot.val();
 
+              // console.log(activityData.activityCity);
+
                 // Compare data object child values to input values in array with for loop
                 for (i = 0; i < activityTypeArray.length; i++) {
-                if (activityTypeArray[i] == activityData.activityType) {
+                    if (activityTypeArray[i] == activityData.activityType) {
 
-                    for (j = 0; j < durationArray.length; j++) {
-                    if(durationArray[j] == activityData.activityDuration) {
+                        for (j = 0; j < durationArray.length; j++) {
+                            if(durationArray[j] == activityData.activityDuration) {
 
-                        for (k = 0; k < timeOfDayArray.length; k++) {
-                        if (timeOfDayArray[k] == activityData.activityTimeOfDay) {
+                                for (k = 0; k < timeOfDayArray.length; k++) {
+                                    if (timeOfDayArray[k] == activityData.activityTimeOfDay) {
 
-                            for (m = 0; m < priceArray.length; m++) {
-                            if (priceArray[m] == activityData.activityPrice) {
+                                        for (m = 0; m < priceArray.length; m++) {
+                                            if (priceArray[m] == activityData.activityPrice) {
 
-                                for (m = 0; m < priceArray.length; m++) {
-                                if (priceArray[m] == activityData.activityPrice) {
-
-                                    // if (userCity == activityData.activityCity) {
+                                    if (userCity == activityData.city) {
 
                                         function createCard(){
 
@@ -98,6 +112,7 @@ $(document).ready(function() {
                                             var button = $('<button/>');
                                             button.attr("class", "btn btn-dark detail-button");
                                             button.attr("id" , btnID);
+                                            button.data("activity", activityData);
                                             button.text("Details");
 
                                             var title = $("<div>");
@@ -113,7 +128,7 @@ $(document).ready(function() {
 
                                             $(cardBody).append(title);
                                             $(cardBody).append(text);
-                                          
+
                                             $(cardBody).append(button);
 
                                             $("#titleID" + cardID).html(activityData.activityName + "<br><br>");
@@ -123,29 +138,43 @@ $(document).ready(function() {
 
                                         };
 
-                                        createCard();
 
-                                        $(document).on("click" , "#btnID" + cardID , function(e){
-                                             bootbox.dialog({
-                                                title: '<h1 class = "text-center">' + activityData.activityName + '</h1>',
-                                                message: activityData.activityPrice
-                                                });
-                                        })
 
-                                             
-                                    // };
 
-                                };
-                                };
+
+                                        createCard();                           
+
+                                    };
+
+
+                                };break;
                             };
-                            };
-                        };
-                        };
+                        };break;
                     };
-                    };
-                };
-                };
-            });
+                };break;
+            };
+        };break;
+    };
+});
         });
+
+        $(document).on("click" , ".detail-button" , function(e){
+
+            bootbox.dialog({
+                onEscape : true,
+                backdrop : true,
+                closeButton : false,
+                title: '<h1 class = "text-center">' + $(this).data("activity").activityName + '</h1>',
+                message: '<h4 class = "bg-light">Price: </h4>' + "<p>" + $(this).data("activity").activityPrice + "</p>"
+                + '<h4 class = "bg-light">Type:</h4>' + "<p>" + $(this).data("activity").activityType + "</p>"
+                + '<h4 class = "bg-light">Duration: </h4>' + "<p>" + $(this).data("activity").activityDuration + "</p>"
+                + '<h4 class = "bg-light">Time of the Day: </h4>' + "<p>" + $(this).data("activity").activityTimeOfDay + "</p>"
+                + '<h4 class = "bg-light">Location: </h4>' + "<p>" + $(this).data("activity").address + ", " + $(this).data("activity").city 
+                + ", " + $(this).data("activity").state + "</p>"
+
+
+            });
+        })
     });
+
 });
