@@ -81,9 +81,11 @@ function geolocate() {
 
 var typed = new Typed('.type', {
   strings: ["Do What?",
-    "Do When?",
-    "Do Where?",
-    "DO NOW!"],
+    "Do Adventure!",
+    "Do Local!",
+    "Do Nightlife!",
+    "Do Sports!",
+    "Do Everything!"],
   typeSpeed : 75,
     backDelay : 1500,
     smartBackspace : false,
