@@ -39,7 +39,14 @@ var cardID = 0;
 
 $(document).ready(function() {
 
+//     var database = firebase.database().ref();
+//     database.on("value" , function(snapshot){
+//         snapshot.forEach(function(childSnapshot){
 
+//         })
+//         var actData = snapshot.val();
+//         createCard();
+//     })
 
 
     $("#submit").on("click", function() {
@@ -68,7 +75,7 @@ $(document).ready(function() {
         var activityRef = firebase.database().ref();
 
         // Reference data objects in Firebase
-        activityRef.on('value', function(snapshot) {
+        activityRef.once('value', function(snapshot) {
             snapshot.forEach(function(childSnapshot) {
               var activityData = childSnapshot.val();
 
