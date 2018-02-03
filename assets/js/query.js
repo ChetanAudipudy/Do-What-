@@ -35,6 +35,7 @@ for (i = 0; i < acc.length; i++) {
   });
 };
 
+var activityRef = firebase.database().ref();
 var cardID = 0;
 
 $(document).ready(function() {
@@ -72,7 +73,7 @@ $(document).ready(function() {
         });
 
         // Create a variable to link to firebase
-        var activityRef = firebase.database().ref();
+        // var activityRef = firebase.database().ref();
 
         // Reference data objects in Firebase
         activityRef.once('value', function(snapshot) {
@@ -95,6 +96,8 @@ $(document).ready(function() {
                                             if (priceArray[m] == activityData.activityPrice) {
 
                                     if (userCity == activityData.city) {
+
+                                        console.log(activityData.activityName);
 
                                         function createCard(){
 
@@ -142,7 +145,7 @@ $(document).ready(function() {
 
 
 
-                                        createCard();                           
+                                        createCard();
 
                                     };
 
@@ -169,12 +172,23 @@ $(document).ready(function() {
                 + '<h4 class = "bg-light">Type:</h4>' + "<p>" + $(this).data("activity").activityType + "</p>"
                 + '<h4 class = "bg-light">Duration: </h4>' + "<p>" + $(this).data("activity").activityDuration + "</p>"
                 + '<h4 class = "bg-light">Time of the Day: </h4>' + "<p>" + $(this).data("activity").activityTimeOfDay + "</p>"
-                + '<h4 class = "bg-light">Location: </h4>' + "<p>" + $(this).data("activity").address + ", " + $(this).data("activity").city 
+                + '<h4 class = "bg-light">Location: </h4>' + "<p>" + $(this).data("activity").address + ", " + $(this).data("activity").city
                 + ", " + $(this).data("activity").state + "</p>"
 
 
             });
         })
+    });
+
+    $(".detail-button").on("click", function() {
+
+        // Reference data objects in Firebase
+        activityRef.on('value', function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+              var activityData = childSnapshot.val();
+              console.log(activityData.Name);
+          });
+        });
     });
 
 });
