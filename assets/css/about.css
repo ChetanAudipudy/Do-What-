@@ -1,0 +1,50 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+#box1{
+	height: 100vh;
+	width: 100%;
+	background-image: url("https://firebasestorage.googleapis.com/v0/b/dowhat-946f1.appspot.com/o/DoWhat%2FbackyardC.jpg?alt=media&token=6d15f87a-f99f-43cc-98e4-13f255c4ddbf");
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: table;
+	background-attachment: fixed;
+}
+#box2{
+	height: 100vh;
+	width: 100%;
+	background-image: url("../images/don.jpg");
+	color: white;
+	background-size: cover;
+	display: table;
+	background-attachment: fixed;
+}
+#box3{
+	height: 100vh;
+	width: 100%;
+	color: black;
+	background-image: url("../images/stephanie.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: table;
+	background-attachment: fixed;
+}
+#box4{
+	height: 100vh;
+	width: 100%;
+	color: black;
+	background-image: url("../images/chetan.jpg");
+	background-size: cover;
+	display: table;
+	background-attachment: fixed;
+}
+h1{
+	font-family: arial black;
+	font-size: 50px;
+	margin: 0px;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
